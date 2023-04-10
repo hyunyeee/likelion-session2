@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style/sign.css">
+  <title>회원가입</title>
+</head>
+<body>
+<div class="signWrapper">
+  <h1>회원가입</h1>
+  <form id="signupForm" class="singForm">
+    <input type="text" placeholder="아이디" id="signupId" class="signInput" />
+    <input type="password" placeholder="비밀번호" id="signupPassword" class="signInput" />
+    <button type="submit" id="signupButton" class="signButton">회원가입</button>
+  </form>
+  <a type="text/html" href="signin.html">로그인 화면으로</a>
+
+</div>
+
+<script type="module" src="js/signup.js"></script>
+<!--type module 쓰는 이유
+signup 안에 로그인 파일 / 검증파일 따로
+import해서 특정 파일 가져오고
+import : module 방식중 하나
+이걸 쓰기 위해 type="module"지정해야 import 사용 가능
+-->
+
+
+</body>
+</html>
