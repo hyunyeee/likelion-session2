@@ -3,6 +3,7 @@ const todoInputEl =  document.querySelector('#todoInput')
 const todoButtonEl =  document.querySelector('#todoButton')
 const logoutButtonEl =  document.querySelector('#logoutButton')
 
+
 const isLogin = () => {
     const loginedUser = localStorage.getItem('login');
     if (!loginedUser) {
@@ -15,6 +16,8 @@ const readTodo = () => {
     todoContainerEl.innerHTML = '';
 
     const todos = JSON.parse(localStorage.getItem('todos')).reverse();
+
+    console.log(todos)
 
     todos.forEach(todo => {
         const divEl = document.createElement('div')
@@ -41,9 +44,7 @@ const readTodo = () => {
         contentEl.textContent = todo.content;
         contentEl.htmlFor = todo.id;
 
-
         userEl.textContent = todo.user;
-
 
         divEl.append(completeEl, contentEl, userEl, deleteEl)
         todoContainerEl.append(divEl)
@@ -83,6 +84,26 @@ const deleteTodo = (deleteId) => {
 
 };
 
+
+//updateComplete(todo.id, completeEl.checked);
+//todo completeEl.checked는 boolean값을 가짐 -> 상태값 반전 시켜야함, 새로고침해도 유지되어야 함
+
+const updateComplete = (updateId, isChecked) => {
+    const todos = JSON.parse(localStorage.getItem('todos'));
+
+    todos.map((todo) => {
+        if (todo.id === updateId) {
+            todo.complete = isChecked
+            return todo
+        }else {
+            return todo;
+        }
+    })
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+    readTodo();
+}
 
 const init = () => {
     isLogin();
