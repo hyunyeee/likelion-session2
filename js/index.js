@@ -7,10 +7,9 @@ const isLogin = () => {
     const loginedUser = localStorage.getItem('login');
     if (!loginedUser) {
         alert('로그인이 필요합니다!')
-        location.href = '../signin.html';
+        location.href = '../html/signin.html';
     }
 }
-
 
 const readTodo = () => {
     todoContainerEl.innerHTML = '';
@@ -85,8 +84,6 @@ const deleteTodo = (deleteId) => {
 };
 
 
-
-
 const init = () => {
     isLogin();
 
@@ -101,15 +98,3 @@ const init = () => {
 }
 
 document.addEventListener('DOMContentLoaded', init) //돔 콘텐츠 다 로드 되면 init 실행
-
-
-
-
-
-
-
-
-
-
-
-

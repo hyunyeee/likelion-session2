@@ -74,7 +74,7 @@ const init = () => {
 
         registerUser({id: idValue, password: passwordValue})
         alert('회원가입 완료!');
-        location.href = '../signin.html'
+        location.href = '../html/signin.html'
 
     })
 };

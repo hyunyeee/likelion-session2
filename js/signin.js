@@ -23,7 +23,7 @@ const isLogined = () => {
 const init = () => {
     if (isLogined()) {
         alert('이미 로그인 되어있습니다!')
-        location.href = "../index.html";
+        location.href = "../html/index.html";
         return;
     }
 
@@ -37,7 +37,7 @@ const init = () => {
             alert('로그인 성공!');
             //로그인이 됐으면 로컬스토리지에 로그인이 됐는지 string으로 저장
             localStorage.setItem('login', JSON.stringify(idEl.value))
-            location.href = 'index.html';
+            location.href = '../html/index.html';
         } else {
             alert('로그인 실패!');
             idEl.value = '';
