@@ -12,6 +12,11 @@ const isLogin = () => {
     }
 }
 
+const logout = () => {
+    localStorage.removeItem('login');
+    location.href = '../html/index.html';
+}
+
 const readTodo = () => {
     todoContainerEl.innerHTML = '';
 
@@ -69,7 +74,6 @@ const createTodo = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
     todoInputEl.value = '';
 
-
     readTodo();
 
 }
@@ -115,7 +119,8 @@ const init = () => {
     readTodo();
 
     todoButtonEl.addEventListener('click', createTodo);
-    // logoutButtonEl.addEventListener('click', logout);
+
+    logoutButtonEl.addEventListener('click', logout);
 }
 
 document.addEventListener('DOMContentLoaded', init) //돔 콘텐츠 다 로드 되면 init 실행

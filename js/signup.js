@@ -4,7 +4,7 @@ const passwordEl = document.querySelector("#signupPassword");
 
 const isUserExist = (newUserId) => {
     const users = localStorage.getItem('userList');
-    //로컬스토리지는 key value로 이루어짐
+    // 로컬스토리지는 key value로 이루어짐
 
     if (!users) return false;
 
@@ -80,21 +80,3 @@ const init = () => {
 };
 
 document.addEventListener('DOMContentLoaded', init)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
