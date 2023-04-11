@@ -12,8 +12,6 @@ const checkLogin = (id, password) => {
     const coincedUser = convertToJson.find(user => user.id === id && user.password === password)
 
     return coincedUser ? true : false;
-
-
 };
 
 const isLogined = () => {
@@ -35,7 +33,7 @@ const init = () => {
 
         if (isSuccess) {
             alert('로그인 성공!');
-            //로그인이 됐으면 로컬스토리지에 로그인이 됐는지 string으로 저장
+            //로그인이 됐으면 로컬스토리지에 로그인 ID JSON string으로 저장
             localStorage.setItem('login', JSON.stringify(idEl.value))
             location.href = '../html/index.html';
         } else {
@@ -43,14 +41,7 @@ const init = () => {
             idEl.value = '';
             passwordEl.value = '';
         }
-
-
     })
 }
 
 document.addEventListener('DOMContentLoaded', init);
-
-
-
-
-
